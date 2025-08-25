@@ -1,0 +1,15 @@
+
+Un serveur a une adresse (hote) = l'adresse de votre machine. localhost = 127.0.0.1
+a un port
+http = 80
+ftp = 21
+https = 443
+
+
+Code http
+200 => tout se passe bien
+404 => page non trouvé
+
+Methode http
+GET
+POST

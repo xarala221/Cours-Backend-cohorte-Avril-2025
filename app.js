@@ -1,17 +1,14 @@
-const express = require('express')
+const http = require('http')
 
+const hote = '127.0.0.1'
 const port = 3000
-const app = express()
 
-app.get('/', (req, res) => {
-  res.send('Bienvenue dans le cours Express')
+const serveur = http.createServer((req, res) => {
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'text/plain')
+  res.end('Bienvenue sur mon serveur')
 })
 
-app.get('/a-propos', (req, res) => {
-  console.log('req', req.path)
-  res.send('Page a propos')
-})
-
-app.listen(port, () => {
-  console.log(`Le serveur Express tourne à l'adresse http://localhost:${port}/`)
+serveur.listen(port, hote, () => {
+  console.log(`Le serveur tourne à l'adresse http://${hote}/${port}/`)
 })
